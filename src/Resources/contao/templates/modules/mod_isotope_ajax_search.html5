@@ -11,7 +11,14 @@
   
   <?php foreach($this->results as $result) { ?>
   
-    <?php echo "SKU: " . $result . "<br>"; ?>
+    <?php
+        foreach($result as $key => $val) {
+        
+            echo "$key: $val<br>";
+        
+        }
+        echo "<br><hr><br>";
+    ?>
   
   <?php } ?>
   
