@@ -1,0 +1,41 @@
+{
+    "name":"bright-cloud-studio/contao-isotope-ajax-search",
+    "description":"Adds a custom module that allows searching for Isotope products and variants using AJAX",
+    "keywords": ["contao", "isotope", "ajax", "search", "bright", "cloud", "studio"],
+    "type": "contao-bundle",
+    "homepage": "http://brightcloudstudio.com/",
+    "license": "LGPL-3.0+",
+    "authors":[
+        {
+            "name": "Bright Cloud Studio",
+            "homepage": "https://brightcloudstudio.com",
+            "email": "mark@brightcloudstudio.com",
+            "role": "Developer"
+        }
+    ],
+    "support":{
+        "issues": "https://github.com/bright-cloud-studio/contao-isotope-ajax-search/issues",
+        "source": "https://github.com/bright-cloud-studio/contao-isotope-ajax-search"
+    },
+    "require":{
+        "php": "^7.4 || ^8.0",
+        "contao/core-bundle": "^4.13 || ^5.3"
+    },
+    "extra":{
+        "contao-manager-plugin": "Bcs\\IsotopeAjaxSearchBundle\\ContaoManager\\Plugin"
+    },
+    "autoload": {
+        "psr-4": {
+            "Bcs\\IsotopeAjaxSearchBundle\\": "src"
+        },
+        "classmap": [
+            "src/Resources/contao"
+        ],
+        "exclude-from-classmap": [
+            "src/Resources/contao/config/",
+            "src/Resources/contao/dca/",
+            "src/Resources/contao/languages/",
+            "src/Resources/contao/templates/"
+        ]
+    }
+}
