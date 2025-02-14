@@ -60,16 +60,30 @@ class ModIsotopeAjaxSearch extends \Contao\Module
             
             // Convert SKU csv into an array
             $skus = (explode(",", Input::get('sku')));
+            // Store our results
+            $results = array();
             
-            /* DEBUG
-            echo "SKU COUNT: " . count($skus) . "<br><br>";
             foreach($skus as $sku) {
-                echo "SKU: " . $sku . "<br>";
+                
+                // Get Product or Variant
+                $product = Product::findOneBy(['tl_iso_product.sku=?'],[$sku]);
+                
+                if($product) {
+                    // Add attributes to array
+                    $details = array();
+                    $details['name'] = $product->name;
+                    $details['id'] = $product->id;
+                    $details['sku'] = $product->sku;
+                    
+                    $results[$details['sku']] = $details;
+                }
+                
+                
+                
             }
-            die();
-            */
             
-            $this->Template->results = $skus;
+            // Add our attributes to the template so we can see it on the front end
+            $this->Template->results = $results;
 
 
         }
