@@ -7,5 +7,13 @@
     <input type="text" id="sku" name="sku"><br><br>
     <input type="submit" value="Submit">
   </form>
+  
+  
+  <?php foreach($this->results as $result) { ?>
+  
+    <?php echo "SKU: " . $result . "<br>"; ?>
+  
+  <?php } ?>
+  
 
 </div>
