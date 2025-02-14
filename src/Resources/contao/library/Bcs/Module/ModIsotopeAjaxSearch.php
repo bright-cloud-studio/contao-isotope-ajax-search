@@ -5,6 +5,7 @@ namespace Bcs\Module;
 use Contao\BackendTemplate;
 use Contao\Controller;
 use Contao\Database;
+use Contao\Input;
 use Contao\System;
 use Contao\FrontendUser;
 
@@ -51,9 +52,23 @@ class ModIsotopeAjaxSearch extends \Contao\Module
         return parent::generate();
     }
 
-
+    // When Page Loads
     protected function compile()
     {
+        // Check if we have a SKU in our URL
+        if (Input::get('sku') != '') {
+            
+            // Convert SKU csv into an array
+            $skus = (explode(",", Input::get('sku')));
+            
+            /* DEBUG
+            echo "SKU COUNT: " . count($skus) . "<br><br>";
+            foreach($skus as $sku) {
+                echo "SKU: " . $sku . "<br>";
+            }
+            */
+
+        }
     }
 
 }
