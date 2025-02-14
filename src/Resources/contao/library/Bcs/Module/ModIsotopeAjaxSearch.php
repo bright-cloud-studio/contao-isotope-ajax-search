@@ -61,12 +61,15 @@ class ModIsotopeAjaxSearch extends \Contao\Module
             // Convert SKU csv into an array
             $skus = (explode(",", Input::get('sku')));
             
-            /* DEBUG */
+            /* DEBUG
             echo "SKU COUNT: " . count($skus) . "<br><br>";
             foreach($skus as $sku) {
                 echo "SKU: " . $sku . "<br>";
             }
             die();
+            */
+            
+            $this->Template->results = $skus;
 
 
         }
